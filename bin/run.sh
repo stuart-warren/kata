@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
 ## brew install fswatch
-
-fswatch -iE ".*\.[go]+" . | xargs -n1 -I{} sh -c 'go test ./... && git add . && git commit -m "commit $(date)" && echo "success \o/"'
+while true
+do
+  fswatch --one-event -iE ".*\.[go]+" . && \
+  go test ./... && git add . && \
+  git commit -m "commit $(date)" && \
+  echo "success \o/"
+done
