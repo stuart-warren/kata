@@ -1,7 +1,20 @@
 package fizzbuzz_test
 
-import "testing"
+import (
+	"strconv"
+	"testing"
 
-func test_nothing(t *testing.T) {
-	t.Fail()
+	"github.com/stuart-warren/kata/fizzbuzz"
+)
+
+func TestNumber(t *testing.T) {
+	for input := range []int{1} {
+		output, err := fizzbuzz.Do(input)
+		if err != nil {
+			t.Errorf("Got unexpected error: %v", err)
+		}
+		if strconv.Itoa(input) != output {
+			t.Errorf("Got unexpected output: %s from %d", output, input)
+		}
+	}
 }
