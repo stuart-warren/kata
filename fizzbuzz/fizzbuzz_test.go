@@ -7,8 +7,8 @@ import (
 	"github.com/stuart-warren/kata/fizzbuzz"
 )
 
-func TestNumber(t *testing.T) {
-	for input := range []int{1, 2} {
+func TestNumberShouldNotFizzOrBuzz(t *testing.T) {
+	for input := range []int{1, 2, 4, 17} {
 		output, err := fizzbuzz.Do(input)
 		if err != nil {
 			t.Errorf("Got unexpected error: %v", err)
