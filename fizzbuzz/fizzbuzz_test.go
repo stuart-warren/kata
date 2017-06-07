@@ -8,7 +8,7 @@ import (
 )
 
 func TestNumber(t *testing.T) {
-	for input := range []int{1} {
+	for input := range []int{1, 2} {
 		output, err := fizzbuzz.Do(input)
 		if err != nil {
 			t.Errorf("Got unexpected error: %v", err)
