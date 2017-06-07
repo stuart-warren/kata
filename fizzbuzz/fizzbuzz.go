@@ -8,6 +8,9 @@ import "strconv"
 // if number divides by 3 & 5, ouput fizzbuzz
 // else output the number
 func Do(input int) string {
+	if input%5 == 0 && input%3 == 0 {
+		return "fizzbuzz"
+	}
 	if input%5 == 0 {
 		return "buzz"
 	}

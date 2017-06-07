@@ -26,9 +26,18 @@ func TestNumberShouldFizz(t *testing.T) {
 }
 
 func TestNumberShouldBuzz(t *testing.T) {
-	for _, input := range []int{5} {
+	for _, input := range []int{5, 10, 2000} {
 		output := fizzbuzz.Do(input)
 		if output != "buzz" {
+			t.Errorf("Got unexpected output: %q from %d", output, input)
+		}
+	}
+}
+
+func TestNumberShouldFizzBuzz(t *testing.T) {
+	for _, input := range []int{15} {
+		output := fizzbuzz.Do(input)
+		if output != "fizzbuzz" {
 			t.Errorf("Got unexpected output: %q from %d", output, input)
 		}
 	}
