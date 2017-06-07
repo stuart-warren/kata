@@ -1,7 +1,8 @@
 # Programming kata
 
-## TODO
 * FizzBuzz
+
+## TODO
 * Bowling game
 * Number sort
 * Word wrap
