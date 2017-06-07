@@ -2,6 +2,6 @@ package fizzbuzz_test
 
 import "testing"
 
-func nothing(t *testing.T) {
+func test_nothing(t *testing.T) {
 	t.Fail()
 }
