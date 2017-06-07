@@ -17,9 +17,18 @@ func TestNumberShouldNotFizzOrBuzz(t *testing.T) {
 }
 
 func TestNumberShouldFizz(t *testing.T) {
-	for _, input := range []int{3} {
+	for _, input := range []int{3, 6, 9, 99} {
 		output := fizzbuzz.Do(input)
 		if output != "fizz" {
+			t.Errorf("Got unexpected output: %q from %d", output, input)
+		}
+	}
+}
+
+func TestNumberShouldBuzz(t *testing.T) {
+	for _, input := range []int{5} {
+		output := fizzbuzz.Do(input)
+		if output != "buzz" {
 			t.Errorf("Got unexpected output: %q from %d", output, input)
 		}
 	}
