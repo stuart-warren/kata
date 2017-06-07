@@ -35,7 +35,7 @@ func TestNumberShouldBuzz(t *testing.T) {
 }
 
 func TestNumberShouldFizzBuzz(t *testing.T) {
-	for _, input := range []int{15} {
+	for _, input := range []int{15, 150} {
 		output := fizzbuzz.Do(input)
 		if output != "fizzbuzz" {
 			t.Errorf("Got unexpected output: %q from %d", output, input)
